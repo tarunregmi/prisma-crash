@@ -1,0 +1,18 @@
+services:
+  database:
+    image: postgres:alpine
+    restart: always
+    container_name: ${DB_NAME}_database
+    env_file: .env
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+      - PGPORT=${DB_PORT}
+    ports:
+      - ${DB_PORT}:${DB_PORT}
+    volumes:
+      - database_data:/var/lib/postgresql/data/:rw
+
+volumes:
+  database_data:
