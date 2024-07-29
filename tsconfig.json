@@ -15,8 +15,12 @@
     "skipLibCheck": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
+    "allowJs": false,
   },
-  "include": [ "src/**/*" ],
+  "include": [
+    "src/**/*",
+    "prisma/client/**/*"
+  ],
   "exclude": [
     "node_modules",
     "**/*.spec.ts",
